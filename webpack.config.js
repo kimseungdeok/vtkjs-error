@@ -30,6 +30,6 @@ module.exports = {
     noInfo: false,
     stats: {
       colors: true,
-    },
-  },
+    }
+  }
 };
