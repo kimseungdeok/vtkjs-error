@@ -15,19 +15,28 @@ module.exports = {
         loader: 'babel-loader',
         exclude: /node_modules/,
       },
+      {
+        test: /\.html$/i,
+        loader: "html-loader",
+      },
     ],
   },
   resolve: {
     extensions: ['.js'],
   },
   devServer: {
-    contentBase: path.join(__dirname, 'dist'),
-    disableHostCheck: true,
+    static: {
+        directory: path.join(__dirname,  'dist'),
+      },
+    // contentBase: path.join(__dirname, 'dist'),
+    // disableHostCheck: true,
     hot: false,
-    quiet: false,
-    noInfo: false,
-    stats: {
-      colors: true,
-    }
+    // quiet: false,
+    // noInfo: false,
+    // stats: {
+    //   colors: true,
+    // },
+    compress: true,
+    port: 3001,
   }
 };
